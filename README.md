@@ -124,3 +124,25 @@ Abaixo estão os endpoints disponíveis para interagir com a API. Cada endpoint 
 
 ```http
 GET /api/tasks/
+```
+#### Testes
+
+Os testes podem ser escritos no arquivo tests.py da sua aplicação. Exemplo:
+```
+from django.test import TestCase
+from .models import Task
+
+class TaskModelTest(TestCase):
+
+    def setUp(self):
+        Task.objects.create(title="Test Task", description="Test description")
+
+    def test_task_creation(self):
+        task = Task.objects.get(title="Test Task")
+        self.assertEqual(task.description, "Test description")
+```
+
+### Referências
+
+- Documentação do Django
+- Documentação do Django Rest Framework
