@@ -52,4 +52,25 @@ Antes de começar, você precisará ter o seguinte instalado:
    python manage.py runserver
    ```
 # Estrutura do projeto
+   
+   Django_Rest_Framework/
+   │
+   ├── manage.py
+   ├── venv/
+   │
+   ├── app/
+   │   ├── migrations/
+   │   ├── __init__.py
+   │   ├── admin.py
+   │   ├── apps.py
+   │   ├── models.py
+   │   ├── serializers.py
+   │   ├── tests.py
+   │   └── views.py
+   │
+   └── Django_Rest_Framework/
+       ├── __init__.py
+       ├── settings.py
+       ├── urls.py
+       └── wsgi.py
 
