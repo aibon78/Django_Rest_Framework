@@ -52,7 +52,7 @@ Antes de começar, você precisará ter o seguinte instalado:
    python manage.py runserver
    ```
 # Estrutura do projeto
-   `plaintext
+   ```
    Django_Rest_Framework/
    │
    ├── manage.py
@@ -73,4 +73,4 @@ Antes de começar, você precisará ter o seguinte instalado:
        ├── settings.py
        ├── urls.py
        └── wsgi.py
-`
+```
