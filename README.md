@@ -51,7 +51,7 @@ Antes de começar, você precisará ter o seguinte instalado:
    ```
    python manage.py runserver
    ```
-# Estrutura do projeto
+## Estrutura do projeto
    ```
    Django_Rest_Framework/
    │
@@ -74,3 +74,53 @@ Antes de começar, você precisará ter o seguinte instalado:
        ├── urls.py
        └── wsgi.py
 ```
+## Configuração do Ambiente
+
+**1. Adicione Aplicativos ao** ```INSTALLED_APPS```
+Abra o arquivo ```settings.py``` dentro da pasta ```Django_Rest_Framework``` e adicione ```'rest_framework'``` e ```'app'``` à lista de ```INSTALLED_APPS```:
+
+```
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'app',
+]
+```
+**2. Configure as URLs**
+Abra o arquivo ```urls.py``` e configure as URLs da seguinte maneira:
+```
+from django.urls import path, include
+
+urlpatterns = [
+    path('api/', include('app.urls')),
+]
+```
+## Modelos
+
+No arquivo models.py, defina o modelo de Tarefa:
+```
+from django.db import models
+
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+```
+
+## Endpoints da API
+
+Abaixo estão os endpoints disponíveis para interagir com a API. Cada endpoint permite realizar operações CRUD (Create, Read, Update, Delete) em tarefas.
+
+### Listar Tarefas
+
+- **Método**: `GET`
+- **Endpoint**: `/api/tasks/`
+- **Descrição**: Retorna uma lista de todas as tarefas.
+
+#### Exemplo de Requisição
+
+```http
+GET /api/tasks/
