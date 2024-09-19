@@ -32,3 +32,24 @@ Antes de começar, você precisará ter o seguinte instalado:
    ```bash
    git clone https://github.com/seu-usuario/Django_Rest_Framework.git
    cd Django_Rest_Framework
+   ```
+2. Crie um ambiente virtual:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # No Windows, use venv\Scripts\activate
+   ```
+3. Instale as dependências:
+   ```bash
+   pip install django djangorestframework
+   ```
+4. Crie e aplique as migrações:
+   ```
+   python manage.py migrate
+   ```
+5.Inicie o servidor de desenvolvimento:
+   ```
+   python manage.py runserver
+   ```
+# Estrutura do projeto
+
