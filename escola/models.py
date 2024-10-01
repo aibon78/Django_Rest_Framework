@@ -21,4 +21,28 @@ class Estudante(models.Model):
     
     def __str__(self):
         return self.nome
+
+'''Dados necessários:
+Id
+Código
+Máximo de 10 caracteres
+Descrição
+Não pode estar em Branco
+Nível (Básico, Intermediário e Avançado)
+Não pode estar em Branco
+Não pode ser Nulo
+Por padrão deve ser Básico'''    
+
+class Curso(models.Model):
+    NIVEL= (
+        ('B','Básico'),
+        ('I', 'Intermediario'),
+        ('A','Avançado'),
+    )
+    codigo = models.CharField(max_length= 10)
+    descricao =models.CharField(max_length= 100, blank = False)
+    nivel = models.CharField(max_length= 1, choices=NIVEL, blank=False, null= False, default= 'B')
+    
+    def __str__(self):
+        return self.codigo
     
