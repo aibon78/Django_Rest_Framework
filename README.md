@@ -146,5 +146,5 @@ class TaskModelTest(TestCase):
 
 - Documentação do Django
 - Documentação do Django Rest Framework
-
+- Alura
 obs:Projeto feito para a Alura
